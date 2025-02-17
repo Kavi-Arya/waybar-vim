@@ -1,0 +1,143 @@
+@import "colors.css";
+/*@import "mode.css";*/
+#backlight,
+#battery,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#pulseaudio,
+#clock,
+#tags,
+#language,
+#memory,
+#network,
+#sndio,
+#mode,
+#window,
+#workspaces,
+#temperature,
+#taskbar,
+#workspaces,
+#custom-treefetch-downloads,
+#custom-archupdates,
+#custom-axyl-downloads,
+#custom-gpu-temp,
+#custom-artix,
+#custom-cpubars,
+#custom-nettrf,
+#custom-submap,
+#custom-nowplaying {
+  background: @background;
+  color: @foreground;
+  font-size: 17px;
+}
+@define-color blue-alt #7da1ae;
+@define-color blue #7daea3;
+
+* {
+  font-family: "Zed Mono Nerd Font";
+  font-size: 17px;
+}
+
+window#waybar {
+  background-color: @color0;
+  color: @foreground;
+  font-size: 17px;
+}
+
+.modules-left {
+  background-color: @color0;
+  padding: 0px 0px 0px 0px;
+}
+
+.modules-right {
+  background-color: @color0;
+  padding: 0px 5px 0px 0px;
+}
+
+#workspaces {
+  font-size: 17px;
+}
+
+#workspaces button {
+  font-size: 13px;
+  padding: 0px 8px 0px 8px;
+  min-width: 1px;
+}
+
+#workspaces button.empty {
+  color: @foreground;
+}
+
+#workspaces button.visible {
+  font-size: 17px;
+  padding: 0px 8px 0px 8px;
+  min-width: 1px;
+  color: #ea6962;
+}
+
+#workspaces button.focused {
+  font-size: 17px;
+  padding: 0px 8px 0px 8px;
+  padding: 0px 8px 0px 8px;
+  background-color: @color1;
+  color: @foreground;
+}
+
+#workspaces button.active {
+  font-size: 17px;
+  padding: 0px 8px 0px 8px;
+  background-color: @color1;
+  color: @forground;
+}
+
+#custom-nowplaying,
+#window {
+  font-size: 17px;
+  color: @foreground;
+  background-color: @background;
+  /* padding: 0px 10px 0px 10px; */
+}
+
+window#waybar.empty #window {
+  font-size: 13px;
+  background-color: transparent;
+  color: transparent;
+}
+
+window#waybar.empty {
+  font-size: 17px;
+  background-color: @color0;
+}
+
+#custom-separator {
+  margin: 0em 0.3em 0em 0.3em;
+  background: @background;
+  color: @foreground;
+  font-size: 1.1em;
+}
+
+/* Center Alined */
+#custom-submap {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0px 10px 2px 0px;
+  background-color: @color1;
+  color: @color0;
+}
+#clock {
+  margin: 0px 0px 2px 0px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: @blue-alt;
+  color: @background;
+}
+
+#custom-workspaces {
+  margin: 0px 0px 2px 0px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: @blue;
+  color: @color0;
+}
