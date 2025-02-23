@@ -1,5 +1,5 @@
 @import "colors.css";
-/*@import "mode.css";*/
+@import "maincolors.css";
 #backlight,
 #battery,
 #cpu,
@@ -30,38 +30,36 @@
 #custom-nowplaying {
   background: @background;
   color: @foreground;
-  font-size: 17px;
+  font-size: 13px;
+  margin: 0px 0px 2px 0px;
 }
-@define-color blue-alt #7da1ae;
-@define-color blue #7daea3;
+
 
 * {
   font-family: "Zed Mono Nerd Font";
-  font-size: 17px;
+  font-size: 13px;
 }
 
 window#waybar {
-  background-color: @color0;
+  background-color: @background;
   color: @foreground;
-  font-size: 17px;
 }
 
 .modules-left {
-  background-color: @color0;
+  background-color: @background;
   padding: 0px 0px 0px 0px;
 }
 
 .modules-right {
-  background-color: @color0;
+  background-color: @background;
   padding: 0px 5px 0px 0px;
 }
 
 #workspaces {
-  font-size: 17px;
 }
 
 #workspaces button {
-  font-size: 13px;
+  font-size: 15px;
   padding: 0px 8px 0px 8px;
   min-width: 1px;
 }
@@ -71,14 +69,12 @@ window#waybar {
 }
 
 #workspaces button.visible {
-  font-size: 17px;
   padding: 0px 8px 0px 8px;
   min-width: 1px;
   color: #ea6962;
 }
 
 #workspaces button.focused {
-  font-size: 17px;
   padding: 0px 8px 0px 8px;
   padding: 0px 8px 0px 8px;
   background-color: @color1;
@@ -86,58 +82,87 @@ window#waybar {
 }
 
 #workspaces button.active {
-  font-size: 17px;
   padding: 0px 8px 0px 8px;
   background-color: @color1;
   color: @forground;
 }
 
-#custom-nowplaying,
-#window {
-  font-size: 17px;
+#custom-nowplaying {
   color: @foreground;
   background-color: @background;
-  /* padding: 0px 10px 0px 10px; */
+  padding: 0px 10px 0px 0px;
+}
+
+#window {
+  color: @foreground;
+  background-color: @background;
+  padding: 0px 10px 0px 0px;
 }
 
 window#waybar.empty #window {
-  font-size: 13px;
   background-color: transparent;
   color: transparent;
+  padding: 0px 10px 0px 0px;
 }
 
 window#waybar.empty {
-  font-size: 17px;
-  background-color: @color0;
+  background-color: @background;
+  padding: 0px 10px 0px 0px;
 }
 
 #custom-separator {
   margin: 0em 0.3em 0em 0.3em;
   background: @background;
   color: @foreground;
-  font-size: 1.1em;
+  font-size: 15px;
+  /*font-size: 1.1em;*/
 }
 
 /* Center Alined */
+#custom-archupdates {
+  margin: 0px 0px 2px 0px;
+}
+
+#custom-weather {
+  margin: 0px 0px 2px 0px;
+}
+
+#custom-cpubars {
+  margin: 0px 0px 4px 0px;
+  color: @color1;
+  background-color: @background;
+}
+
+#custom-cputemp {
+  margin: 0px 0px 2px 0px;
+}
+
+#custom-linux-icon {
+  font-size: 16px;
+  margin: 0px 0px 2px 0px;
+  color: @color1;
+}
+
 #custom-submap {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 7px;
+  padding-right: 6.9px;
   margin: 0px 10px 2px 0px;
   background-color: @color1;
-  color: @color0;
+  color: @background;
 }
+
 #clock {
   margin: 0px 0px 2px 0px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: @blue-alt;
-  color: @background;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: @bg1;
+  color: @color1;
 }
 
 #custom-workspaces {
   margin: 0px 0px 2px 0px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: @blue;
-  color: @color0;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: @color1;
+  color: @background;
 }

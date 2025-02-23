@@ -7,4 +7,4 @@ windowTitle() {
   VAR=$(hyprctl activewindow -j)
   echo $VAR | grep -oP '"title":\s*"\K[^"]+' | sed -E 's/^(.{90}).*$/\1.../' || echo "~"
 }
-[[ $Status == *"Playing"* ]] && echo "Playing - $Artist: $Title" || windowTitle
+[[ $Status == *"Playing"* ]] && echo "  Playing - $Artist: $Title" || echo "  Media: Paused"

@@ -2,20 +2,30 @@
   // Set the bar to always be on top and at the top of the screen.
   "layer": "bottom",
   "position": "bottom",
-  "height": 27,
+  "height": 25,
   "reload_style_on_change": true,
   "modules-left": [
     "custom/submap",
     "hyprland/window",
     "custom/separator",
-    "custom/nowplaying"
+    "custom/nowplaying",
   ],
-  "modules-center": [],
+  "modules-center": [
+  ],
   "modules-right": [
-    "cpu",
+    "custom/archupdates",
+    "custom/separator",
+    "custom/nettrf",
     "custom/separator",
     "pulseaudio",
     "custom/separator",
+    "custom/weather",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "custom/cputemp",
+    "custom/separator",
+    "custom/cpubars",
     "clock",
     "custom/workspaces"
   ],
@@ -25,7 +35,7 @@
     "format-muted": "<span color=\"#b4befe\">Muted: </span>...",
     "format-icons": {
       "default": [
-        "<span>Vol: </span>"
+        "<span>  </span>"
       ],
       "headphone": [
         "<span color=\"#89b4fa\">󰋋 </span>"
@@ -65,6 +75,11 @@
     "interval": "once",
     "tooltip": false
   },
+  "custom/powerline": {
+    "format": "",
+    "interval": "once",
+    "tooltip": false
+  },
   "custom/workspaces": {
     "format": "{}",
     "tooltip": false,
@@ -73,11 +88,17 @@
     "signal": 8,
     "exec": "~/.config/waybar/scripts/workspaces.sh"
   },
+  "custom/linux-icon": {
+    "format": " ",
+    "tooltip": false,
+    "restart-interval": "never",
+    "interval": "once",
+    "signal": 8,
+  },
 
   "hyprland/window": {
     "format": "{class} [+]",
-    "max-length": 40,
-    "separate-outputs": true
+    "max-length": 30
   },
   "hyprland/submap": {
     "format": "{}",
@@ -92,14 +113,26 @@
     "exec": "~/.config/waybar/scripts/submap.sh"
   },
   "custom/nowplaying": {
-    "format": "{}",
+    "format": " {}",
     "interval": 1,
     "escape": true,
     "exec": "~/.config/waybar/scripts/nowPlaying.sh",
     "on-click": "~/.config/waybar/scripts/playtoggle.sh"
   },
+  "custom/weather": {
+    "format": "󰖔 {}",
+    "interval": 2,
+    "escape": true,
+    "exec": "~/.config/waybar/scripts/todaysWeather.sh"
+  },
+  "custom/cputemp": {
+    "format": " {}",
+    "interval": 2,
+    "escape": true,
+    "exec": "~/.config/waybar/scripts/cpu-temp-2.sh"
+  },
   "custom/cpu": {
-    "format": "CPU: {}",
+    "format": " {}",
     "interval": 2,
     "escape": true,
     "exec": "~/src/cpubarsRust/cpubars/src/rustnative",
@@ -112,7 +145,7 @@
     "on-click": "exec firefox https://fast.com"
   },
   "custom/cpubars": {
-    "format": "{}",
+    "format": "{} ",
     "interval": 2,
     "escape": true,
     "exec": "~/.config/waybar/scripts/cpubars",
@@ -124,10 +157,10 @@
     "exec": "~/.config/waybar/scripts/showMode.sh",
   },
   "custom/archupdates": {
-    "format": "</span>{}</span>",
-    "interval": 20,
+    "format": "  {}",
+    "interval": 300,
     "escape": true,
-    "exec": "~/.config/waybar/scripts/arch_updates",
+    "exec": "~/src/archupdates/target/debug/archupdates",
     "on-click": "~/.config/waybar/scripts/notify_arch_updates"
   },
   "custom/icon": {
@@ -138,10 +171,10 @@
   },
   "cpu": {
     "interval": 2,
-    "format": "<span ><span color=\"#ea6962\"></span>CPU: {usage}%</span>",
+    "format": "<span ><span color=\"#ea6962\"></span>  {usage}%</span>",
   },
   "clock": {
-    "format": "<span ><span color=\"#ea6962\"></span>{:%a %b %d %I:%M %p}</span>",
+    "format": "{:%I : %M %p}",
     "timezones": [
       "Asia/Kolkata",
     ],
