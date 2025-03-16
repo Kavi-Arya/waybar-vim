@@ -47,9 +47,10 @@ def main() -> int:
          f'"packages 📦 ({pkg_count})" '
          f'"{pkg_str}"', shell=True)
 
-    # "kitty -c ~/.config/kitty/kitty-hypr.conf --class kitty-dropterm tmux"
-    if not call(["kitty","--class", "kitty-dropterm", "bash", "-c", "sudo pacman -Syyu"]):
-        call(["dunstify", "--hints", "string:x-dunst-stack-tag:arch_updates", "Error", "Not now?"])
+    call(["kitty", "bash", "-c", "sudo pacman -Syyu"]) or call(["dunstify", "--hints", "string:x-dunst-stack-tag:arch_updates", "Error", "Not now?"])
+
+
+
     return 0
 
 
